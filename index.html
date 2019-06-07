@@ -13,5 +13,34 @@
     </head>
     <body>
       <h1>Plots & Pots</h1>
+      <h3 id="message"></h3>
+      <div id="signup-in">
+      <h4>sign up</h4>
+      <form id="sign-up">
+        <input type="email" required name="credentials[email]" placeholder="email" />
+        <input type="password" required name="credentials[password]" placeholder="password" />
+        <input type="password" required name="credentials[password_confirmation]" placeholder="confirm password" />
+        <input type="submit" value="sign up" />
+      </form>
+      <br>
+      <h4>sign in</h4>
+      <form id="sign-in">
+        <input type="email" required name="credentials[email]" placeholder="email" />
+        <input type="password" required name="credentials[password]" placeholder="password" />
+        <input type="submit" value="sign in" />
+      </form>
+      </div>
+      <div id="loggedin" class="hidden">
+        <form id="change-pw">
+          <input type="password" required name="passwords[old]" placeholder="old password" />
+          <input type="password" required name="passwords[new]" placeholder="new password" />
+          <input type="submit" value="change password" />
+        </form>
+        <br>
+        <form id="sign-out">
+          <input type="submit" value="sign out" />
+        </form>
+        <br>
+      </div>
     </body>
 </html>
