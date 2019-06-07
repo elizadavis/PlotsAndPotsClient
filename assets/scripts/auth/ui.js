@@ -42,7 +42,6 @@ const onChangePasswordFailure = () => {
 const onSignOutSuccess = () => {
   $('#message').html('signed out successfully')
   $('#signup-in').show()
-  $('#game-board').addClass('hidden')
   $('#loggedin').addClass('hidden')
 }
 
