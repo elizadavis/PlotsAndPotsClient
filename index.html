@@ -42,5 +42,41 @@
         </form>
         <br>
       </div>
+      </div>
+      <section class="controls">
+  <h4>Get All Plants</h4>
+  <button id="plants-index">Get All Plants</button>
+  <br>
+  <h4>Get A Plant</h4>
+    <form id="plants-show">
+      <input type="number" name="plant[id]" placeholder="Enter a plant ID">
+      <button type="submit">Get A Plant</button>
+    </form>
+    <br>
+  <h4>Delete A Plant</h4>
+    <form id="plants-delete">
+      <input type="number" name="plant[id]" placeholder="Enter a plant ID">
+      <button type="submit">Delete A Plant</button>
+    </form>
+    <br>
+  <h4>Update A Plant</h4>
+    <form id="plants-update">
+      <input type="number" name="plant[id]" placeholder="Enter a plant ID">
+      <input type="text" name="plant[name]" placeholder="Enter a plant name">
+      <input type="text" name="plant[location]" placeholder="Indoor/Outdoor">
+      <input type="text" name="plant[plant_type]" placeholder="Decorative/Edible">
+      <button type="submit">Update A Plant</button>
+    </form>
+    <br>
+  <h4>Create A Plant</h4>
+    <form id="plants-create">
+      <input type="text" name="plant[name]" placeholder="Enter a plant name">
+      <input type="text" name="plant[location]" placeholder="Indoor/Outdoor">
+      <input type="text" name="plant[plant_type]" placeholder="Decorative/Edible">
+      <button type="submit">Create A Plant</button>
+    </form>
+    <br>
+</section>
+<section class="results"></section>
     </body>
 </html>
