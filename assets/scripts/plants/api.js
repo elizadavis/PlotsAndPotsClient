@@ -3,7 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const index = (id) => {
+const index = () => {
   return $.ajax({
     url: config.apiUrl + '/plants',
     method: 'GET',
