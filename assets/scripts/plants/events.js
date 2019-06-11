@@ -29,12 +29,20 @@ const onCreatePlant = (event) => {
     .catch(ui.onFailure)
 }
 
+// const onDeletePlant = (event) => {
+//   event.preventDefault()
+//   const form = event.target
+//   const formData = getFormFields(form)
+//   api.destroy(formData.plant.id)
+//     .then(ui.onDestroySuccess)
+//     .catch(ui.onFailure)
+// }
+
 const onDeletePlant = (event) => {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  api.destroy(formData.plant.id)
-    .then(ui.onDestroySuccess)
+  const id = $(event.target).data('id')
+  api.destroy(id)
+    .then(() => onGetPlants(event))
     .catch(ui.onFailure)
 }
 

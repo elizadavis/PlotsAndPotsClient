@@ -1,0 +1,22 @@
+
+{{#each plants as |plant|}}
+  {{log plant}}
+  <section data-id="{{plant.id}}">
+    <h6>Plant Name:</h6>
+    <h3>
+      {{plant.name}}
+    </h3>
+    <h6>Location:</h6>
+    <p>
+      {{plant.location}}
+    </p>
+    <h6>Plant Type:</h6>
+    <p>
+      {{plant.plant_type}}
+    </p>
+    {{#if plant.editable}}
+      <button data-id="{{plant.id}}" class="btn btn-danger">Remove</button>
+    {{/if}}
+    <hr>
+  </section>
+{{/each}}

@@ -3,17 +3,23 @@
 const config = require('../config')
 const store = require('../store')
 
-const index = () => {
+const index = (id) => {
   return $.ajax({
     url: config.apiUrl + '/plants',
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
 const show = (id) => {
   return $.ajax({
     url: config.apiUrl + '/plants/' + id,
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 

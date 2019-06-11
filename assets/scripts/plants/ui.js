@@ -1,30 +1,34 @@
 'use strict'
 
+const showPlantsTemplate = require('../templates/plant-listing.handlebars')
+
 const onIndexSuccess = (responseData) => {
   $('.results').html('')
-  responseData.plants.forEach(plant => {
-    const plantHTML = `
-      <p>Plant ID: ${plant.id}</p>
-      <h3>${plant.name}</h3>
-      <h4>${plant.location}</h4>
-      <h4>${plant.plant_type}</h4>
-      <hr>
-    `
-    $('.results').append(plantHTML)
-  })
-  $('form').trigger('reset')
+  const plantHtml = showPlantsTemplate({ plants: responseData.plants })
+
+  // responseData.plants.forEach(plant => {
+  // //   const plantHtml = `
+  // //     <p>Plant ID: ${plant.id}</p>
+  // //     <h3>${plant.name}</h3>
+  // //     <h4>${plant.location}</h4>
+  // //     <h4>${plant.plant_type}</h4>
+  // //     <hr>
+  // //   `
+  $('.results').html(plantHtml)
+  // // })
+  // $('form').trigger('reset')
 }
 
 const onShowSuccess = (responseData) => {
   const plant = responseData.plant
-  const plantHTML = `
+  const plantHtml = `
       <p>Plant ID: ${plant.id}</p>
       <h3>${plant.name}</h3>
       <h4>${plant.location}</h4>
       <h4>${plant.plant_type}</h4>
       <hr>
     `
-  $('.results').append(plantHTML)
+  $('.results').append(plantHtml)
   $('form').trigger('reset')
 }
 
@@ -35,14 +39,14 @@ const onDestroySuccess = () => {
 
 const onUpdateSuccess = (responseData) => {
   const plant = responseData.plant
-  const plantHTML = `
+  const plantHtml = `
       <p>Plant ID: ${plant.id}</p>
       <h3>${plant.name}</h3>
       <h4>${plant.location}</h4>
       <h4>${plant.plant_type}</h4>
       <hr>
     `
-  $('.results').html(plantHTML)
+  $('.results').html(plantHtml)
   $('form').trigger('reset')
 }
 
