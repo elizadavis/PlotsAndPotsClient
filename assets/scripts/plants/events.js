@@ -25,7 +25,7 @@ const onCreatePlant = (event) => {
   const form = event.target
   const formData = getFormFields(form)
   api.create(formData)
-    .then(ui.onShowSuccess)
+    .then(() => onGetPlants(event))
     .catch(ui.onFailure)
 }
 
@@ -42,7 +42,7 @@ const onUpdatePlant = (event) => {
   const form = event.target
   const formData = getFormFields(form)
   api.update(formData)
-    .then(ui.onUpdateSuccess)
+    .then(() => onGetPlants(event))
     .catch(ui.onFailure)
 }
 
