@@ -14,12 +14,8 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-pw').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
-  // $('#sidebarCollapse').on('click', function () {
-  //   $('#sidebar').toggleClass('active')
-  // })
   $('#plants-index').on('click', plantEvents.onGetPlants)
   $('#plants-show').on('submit', plantEvents.onGetPlant)
-  // $('#plants-delete').on('submit', plantEvents.onDeletePlant)
   $('.results').on('click', '.btn-danger', plantEvents.onDeletePlant)
   $('#plants-update').on('submit', plantEvents.onUpdatePlant)
   $('#plants-create').on('submit', plantEvents.onCreatePlant)
