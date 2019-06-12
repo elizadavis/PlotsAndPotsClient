@@ -11,21 +11,13 @@ const onGetPlants = (event) => {
     .catch(ui.onFailure)
 }
 
-const onGetPlant = (event) => {
-  event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  api.show(formData.plant.id)
-    .then(ui.onShowSuccess)
-    .catch(ui.onFailure)
-}
-
 const onCreatePlant = (event) => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
   api.create(formData)
     .then(() => onGetPlants(event))
+    .then(ui.onCreateSuccess)
     .catch(ui.onFailure)
 }
 
@@ -34,6 +26,7 @@ const onDeletePlant = (event) => {
   const id = $(event.target).data('id')
   api.destroy(id)
     .then(() => onGetPlants(event))
+    .then(ui.onDestroySuccess)
     .catch(ui.onFailure)
 }
 
@@ -43,12 +36,12 @@ const onUpdatePlant = (event) => {
   const formData = getFormFields(form)
   api.update(formData)
     .then(() => onGetPlants(event))
+    .then(ui.onUpdateSuccess)
     .catch(ui.onFailure)
 }
 
 module.exports = {
   onGetPlants,
-  onGetPlant,
   onDeletePlant,
   onUpdatePlant,
   onCreatePlant
