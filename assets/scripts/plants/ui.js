@@ -3,52 +3,39 @@
 const showPlantsTemplate = require('../templates/plant-listing.handlebars')
 
 const onIndexSuccess = (responseData) => {
-  $('.results').html('')
   const plantHtml = showPlantsTemplate({ plants: responseData.plants })
+  $('.index-msg').text('All Plants')
+  $('.results').removeClass('hidden')
   $('.results').html(plantHtml)
-  $('form').trigger('reset')
-}
-
-const onShowSuccess = (responseData) => {
-  const plant = responseData.plant
-  const plantHtml = `
-      <p>Plant ID: ${plant.id}</p>
-      <h3>${plant.name}</h3>
-      <h4>${plant.location}</h4>
-      <h4>${plant.plant_type}</h4>
-      <hr>
-    `
-  $('.results').append(plantHtml)
   $('form').trigger('reset')
 }
 
 const onDestroySuccess = () => {
-  $('.results').html('<p>You deleted a plant!</p>')
+  $('#message').text('You deleted a plant!')
+  setTimeout(() => $('#message').text(''), 5000)
   $('form').trigger('reset')
 }
 
-const onUpdateSuccess = (responseData) => {
-  const plant = responseData.plant
-  const plantHtml = `
-      <p>Plant ID: ${plant.id}</p>
-      <h3>${plant.name}</h3>
-      <h4>${plant.location}</h4>
-      <h4>${plant.plant_type}</h4>
-      <hr>
-    `
-  $('.results').html(plantHtml)
+const onCreateSuccess = () => {
+  $('#message').text('You created a plant!')
+  setTimeout(() => $('#message').text(''), 5000)
+}
+
+const onUpdateSuccess = () => {
+  $('#message').text('You updated a plant!')
+  setTimeout(() => $('#message').text(''), 5000)
   $('form').trigger('reset')
 }
 
 const onFailure = () => {
-  $('.results').html('<p>There was an error. Please try again.</p>')
-  setTimeout(() => $('.results').html(''), 5000)
+  $('#message').text('There was an error. Please try again.')
+  setTimeout(() => $('.results').text(''), 5000)
   $('form').trigger('reset')
 }
 
 module.exports = {
   onIndexSuccess,
-  onShowSuccess,
+  onCreateSuccess,
   onDestroySuccess,
   onUpdateSuccess,
   onFailure
