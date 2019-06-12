@@ -16,6 +16,6 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#plants-index').on('click', plantEvents.onGetPlants)
   $('.results').on('click', '.btn-danger', plantEvents.onDeletePlant)
-  $('.results').on('submit', '.plants-update', plantEvents.onUpdatePlant)
   $('#plants-create').on('submit', plantEvents.onCreatePlant)
+  $('.results').on('submit', '.plants-update', plantEvents.onUpdatePlant)
 })
