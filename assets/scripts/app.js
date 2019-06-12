@@ -15,7 +15,6 @@ $(() => {
   $('#change-pw').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#plants-index').on('click', plantEvents.onGetPlants)
-  $('#plants-show').on('submit', plantEvents.onGetPlant)
   $('.results').on('click', '.btn-danger', plantEvents.onDeletePlant)
   $('.results').on('submit', '.plants-update', plantEvents.onUpdatePlant)
   $('#plants-create').on('submit', plantEvents.onCreatePlant)
