@@ -13,16 +13,6 @@ const index = () => {
   })
 }
 
-const show = (id) => {
-  return $.ajax({
-    url: config.apiUrl + '/plants/' + id,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
 const destroy = (id) => {
   return $.ajax({
     url: config.apiUrl + '/plants/' + id,
@@ -56,7 +46,6 @@ const create = (formData) => {
 }
 module.exports = {
   index,
-  show,
   destroy,
   update,
   create
