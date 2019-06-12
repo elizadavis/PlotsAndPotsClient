@@ -3,31 +3,32 @@
 const store = require('../store')
 
 const onSignUpSuccess = responseData => {
-  $('#message').text('signed up successfully!')
+  $('#message').text('Signed up successfully!')
   setTimeout(() => $('#message').text(''), 5000)
   $('#sign-up input[type="email"]').val('')
   $('#sign-up input[type="password"]').val('')
 }
 
 const onSignUpFailure = responseData => {
-  $('#message').text('sign up failed')
+  $('#message').text('Sign up failed')
   setTimeout(() => $('#message').text(''), 5000)
   $('#sign-up input[type="email"]').val('')
   $('#sign-up input[type="password"]').val('')
 }
 
 const onSignInSuccess = responseData => {
-  $('#message').text('signed in')
-  setTimeout(() => $('#message').text(''), 5000)
+  $('#message').text('Signed in successfully!')
+  setTimeout(() => $('#message').text(' '), 5000)
   $('#signup-in').hide()
   $('#loggedin').removeClass('hidden')
+  $('#plant-controls').removeClass('hidden')
   $('#sign-in input[type="email"]').val('')
   $('#sign-in input[type="password"]').val('')
   store.user = responseData.user
 }
 
 const onSignInFailure = responseData => {
-  $('#message').text('sign in failed')
+  $('#message').text('Sign in failed')
   setTimeout(() => $('#message').text(''), 5000)
   $('#sign-in input[type="email"]').val('')
   $('#sign-in input[type="password"]').val('')
@@ -50,6 +51,9 @@ const onSignOutSuccess = () => {
   setTimeout(() => $('#message').text(''), 5000)
   $('#signup-in').show()
   $('#loggedin').addClass('hidden')
+  $('.results').addClass('hidden')
+  $('.index-msg').addClass('hidden')
+  $('#plant-controls').addClass('hidden')
 }
 
 const onSignOutFailure = () => {
