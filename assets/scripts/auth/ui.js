@@ -9,13 +9,13 @@ const onSignUpSuccess = responseData => {
 }
 
 const onSignUpFailure = responseData => {
-  $('#message').html('sign up failed')
+  $('#message').text('sign up failed')
   $('#sign-up input[type="email"]').val('')
   $('#sign-up input[type="password"]').val('')
 }
 
 const onSignInSuccess = responseData => {
-  $('#message').html('signed in')
+  $('#message').text('signed in')
   $('#signup-in').hide()
   $('#loggedin').removeClass('hidden')
   $('#sign-in input[type="email"]').val('')
@@ -24,29 +24,29 @@ const onSignInSuccess = responseData => {
 }
 
 const onSignInFailure = responseData => {
-  $('#message').html('sign in failed')
+  $('#message').text('sign in failed')
   $('#sign-in input[type="email"]').val('')
   $('#sign-in input[type="password"]').val('')
 }
 
 const onChangePasswordSuccess = () => {
-  $('#message').html('password changed successfully!')
+  $('#message').text('Password changed successfully!')
   $('#change-pw input[type="password"]').val('')
 }
 
 const onChangePasswordFailure = () => {
-  $('#message').html('unable to change password')
+  $('#message').text('Unable to change password')
   $('#change-pw input[type="password"]').val('')
 }
 
 const onSignOutSuccess = () => {
-  $('#message').html('signed out successfully')
+  $('#message').text('Signed out successfully')
   $('#signup-in').show()
   $('#loggedin').addClass('hidden')
 }
 
 const onSignOutFailure = () => {
-  $('#message').html('sign out failed')
+  $('#message').text('Unable to sign out')
 }
 
 module.exports = {
