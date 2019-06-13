@@ -4,6 +4,7 @@ const showPlantsTemplate = require('../templates/plant-listing.handlebars')
 
 const onIndexSuccess = (responseData) => {
   const plantHtml = showPlantsTemplate({ plants: responseData.plants })
+  $('.index-msg').removeClass('hidden')
   $('.index-msg').text('All Plants')
   $('.results').removeClass('hidden')
   $('.results').html(plantHtml)
