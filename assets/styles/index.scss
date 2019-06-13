@@ -13,9 +13,9 @@ form {
 }
 
 h1 {
-  font-size: 3em;
   float: right;
   font-family: 'Boogaloo', sans-serif;
+  font-size: 3em;
 }
 
 h4 {
@@ -23,9 +23,9 @@ h4 {
 }
 
 header {
-  padding: 30px;
-  margin: 30px;
   // color: white;
+  margin: 30px;
+  padding: 30px;
 }
 
 input {
@@ -39,8 +39,8 @@ main {
 }
 
 section {
-  padding: 1rem;
   display: inline;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -74,8 +74,8 @@ section {
 }
 
 .main-content {
-  width: 75%;
   background-color: rgba(199, 243, 78, .5);
+  width: 75%;
 }
 
 #loggedin {
@@ -84,4 +84,5 @@ section {
 
 #signup-in {
   margin-top: 2rem;
+  text-align: center;
 }
