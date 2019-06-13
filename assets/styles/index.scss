@@ -1,1 +1,87 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Boogaloo&display=swap');
+
+body {
+  background-image: url('../../public/images/background-leaves.jpg');
+  background-size: 1300px;
+  font-family: 'Futura', sans-serif;
+}
+
+form {
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  float: right;
+  font-family: 'Boogaloo', sans-serif;
+}
+
+h4 {
+  text-align: center;
+}
+
+header {
+  padding: 30px;
+  margin: 30px;
+  color: white;
+}
+
+input {
+  margin: 10px;
+  padding: 5px;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+}
+
+section {
+  padding: 1rem;
+  display: inline;
+  text-align: center;
+}
+
+.controls {
+  background-color: rgba(199, 243, 78, .8);
+  width: 25%;
+}
+
+.form-control-plaintext {
+  display: none;
+}
+
+.get-all {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.remove-btn {
+  text-align: center;
+}
+
+.results {
+  margin-top: 40px;
+}
+
+.index-msg {
+  text-align: center;
+}
+
+.main-content {
+  width: 75%;
+  background-color: rgba(199, 243, 78, .5);
+}
+
+#loggedin {
+  margin-top: 2rem;
+}
+
+#signup-in {
+  margin-top: 2rem;
+}

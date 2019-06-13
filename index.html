@@ -12,56 +12,62 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Plots & Pots</h1>
-      <h3 id="message"></h3>
+      <header>
+        <h1>Plots & Pots</h1>
+        <h4 id="message"></h4>
+      </header>
+      <main>
+        <aside class="controls">
       <div id="signup-in">
-      <h4>sign up</h4>
+      <h4>Sign Up</h4>
       <form id="sign-up">
-        <input type="email" required name="credentials[email]" placeholder="email" />
-        <input type="password" required name="credentials[password]" placeholder="password" />
-        <input type="password" required name="credentials[password_confirmation]" placeholder="confirm password" />
-        <input type="submit" value="sign up" />
+        <input type="email" required name="credentials[email]" placeholder="Email" class="span3"/>
+        <input type="password" required name="credentials[password]" placeholder="Password" class="span3" />
+        <input type="password" required name="credentials[password_confirmation]" placeholder="Confirm Password" class="span3" />
+        <input type="submit" value="Sign Up" class="btn btn-primary" />
       </form>
       <br>
-      <h4>sign in</h4>
+      <h4>Sign In</h4>
       <form id="sign-in">
-        <input type="email" required name="credentials[email]" placeholder="email" />
-        <input type="password" required name="credentials[password]" placeholder="password" />
-        <input type="submit" value="sign in" />
+        <input type="email" required name="credentials[email]" placeholder="Email" />
+        <input type="password" required name="credentials[password]" placeholder="Password" />
+        <input type="submit" value="Sign In" class="btn btn-primary" />
       </form>
       </div>
       <div id="loggedin" class="hidden">
+        <h4>Change Password</h4>
         <form id="change-pw">
-          <input type="password" required name="passwords[old]" placeholder="old password" />
-          <input type="password" required name="passwords[new]" placeholder="new password" />
-          <input type="submit" value="change password" />
+          <input type="password" required name="passwords[old]" placeholder="Old Password" />
+          <input type="password" required name="passwords[new]" placeholder="New Password" />
+          <input type="submit" value="Change Password" class="btn btn-primary" />
         </form>
-        <br>
         <form id="sign-out">
-          <input type="submit" value="sign out" />
+          <input type="submit" value="Sign Out" class="btn btn-danger"/>
         </form>
         <br>
       </div>
       </div>
-      <section class="controls">
-  <h4>Get All Plants</h4>
-  <button id="plants-index">Get All Plants</button>
+      <div id="plant-controls" class="hidden">
+  <div class="get-all">
+  <button id="plants-index" class="btn btn-primary">See All Plants</button>
+</div>
   <br>
-  <!-- <h4>Get A Plant</h4>
-    <form id="plants-show">
-      <input type="number" name="plant[id]" placeholder="Enter a plant ID">
-      <button type="submit">Get A Plant</button>
-    </form>
-    <br> -->
+  <br>
   <h4>Create A Plant</h4>
     <form id="plants-create">
-      <input type="text" name="plant[name]" placeholder="Enter a plant name">
-      <input type="text" name="plant[location]" placeholder="Indoor/Outdoor">
-      <input type="text" name="plant[plant_type]" placeholder="Decorative/Edible">
-      <button type="submit">Create A Plant</button>
+      <input type="text" required name="plant[name]" maxlength="30" placeholder="Plant Name">
+      <input type="text" required name="plant[location]" maxlength="4" placeholder="Plot/Pot">
+      <input type="text" required name="plant[plant_type]" maxlength="20" placeholder="Type of Plant">
+      <button type="submit" class="btn btn-primary">Create A Plant</button>
     </form>
     <br>
-</section>
+</div>
+</aside>
+<div class="main-content">
+  <br>
+    <h3 class=index-msg></h3>
 <section class="results"></section>
+</div>
+</main>
     </body>
 </html>
