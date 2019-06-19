@@ -15,7 +15,6 @@
       {{plant.plant_type}}
     </p>
     {{#if plant.editable}}
-      <button data-id="{{plant.id}}" class="btn btn-danger">Remove</button>
       <form class="plants-update">
         <input type="number" readonly class="form-control-plaintext" name="plant[id]" value="{{plant.id}}">
         <input type="text" required name="plant[name]" maxlength="30" placeholder="Plant Name">
@@ -23,6 +22,7 @@
         <input type="text" required name="plant[plant_type]" maxlength="20" placeholder="Type of Plant">
         <button type="submit" data-id="{{plant.id}}" class="btn btn-primary">Update</button>
       </form>
+      <button data-id="{{plant.id}}" class="btn btn-danger">Remove</button>
     {{/if}}
     <hr>
   </section>
