@@ -13,8 +13,12 @@ by others.
 1. HTML
 2. CSS, Sass, & Bootstrap
 3. JavaScript & JQuery
-4. Rails
+4. Rails (1st Iteration)
 5. Handlebars
+6. MongoDB (2nd Iteration)
+7. Mongoose (2nd Iteration)
+8. Express.js (2nd Iteration)
+9. Node.js (2nd Iteration)
 
 ## User Stories:
 1. As a user, I want to sign up.
@@ -59,5 +63,7 @@ user who created them.
 1. Allow users to create personalized lists separated by "plots" and "pots."
 2. Allow lists to be sortable.
 3. Add images.
+* Note that 1st goal has been accomplished through second iteration.
 
-[Back-End Repository](https://github.com/elizadavis/PlotsAndPots)
+[1st Iteration Rails Back-End Repository](https://github.com/elizadavis/PlotsAndPots)
+[2nd Iteration MongoDB Back-End Repository](https://github.com/elizadavis/PlotsAndPotsExpress)
