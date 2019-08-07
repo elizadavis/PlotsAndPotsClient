@@ -52,7 +52,13 @@ const onSignOutSuccess = () => {
   $('#signup-in').show()
   $('#loggedin').addClass('hidden')
   $('.results').addClass('hidden')
+  $('.plot-results').addClass('hidden')
+  $('.pot-results').addClass('hidden')
+  $('.plot-msg').addClass('hidden')
+  $('.pot-msg').addClass('hidden')
   $('.index-msg').addClass('hidden')
+  $('#plots-msg').addClass('hidden')
+  $('#pots-msg').addClass('hidden')
   $('#plant-controls').addClass('hidden')
 }
 
