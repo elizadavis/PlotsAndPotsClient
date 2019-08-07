@@ -6,10 +6,7 @@ const store = require('../store')
 const index = () => {
   return $.ajax({
     url: config.apiUrl + '/plants',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
+    method: 'GET'
   })
 }
 
@@ -36,7 +33,7 @@ const update = (formData) => {
 
 const create = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/plants/',
+    url: config.apiUrl + '/plants',
     method: 'POST',
     data: formData,
     headers: {

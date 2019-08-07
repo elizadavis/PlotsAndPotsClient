@@ -3,6 +3,8 @@
 const ui = require('./ui')
 const api = require('./api')
 const getFormFields = require('./../../../lib/get-form-fields')
+// const plotEvents = require('../plots/events')
+// const potEvents = require('../pots/events')
 
 const onGetPlants = (event) => {
   event.preventDefault()
@@ -10,6 +12,16 @@ const onGetPlants = (event) => {
     .then(ui.onIndexSuccess)
     .catch(ui.onFailure)
 }
+
+// const onGetAll = event => {
+//   event.preventDefault()
+//   api.index()
+//     .then(() => onGetPlants(event))
+//     .then(() => plotEvents.onGetPlots(event))
+//     .then(() => potEvents.onGetPots(event))
+//     .then(ui.onAllIndexSuccess)
+//     .catch(ui.onFailure)
+// }
 
 const onCreatePlant = (event) => {
   event.preventDefault()
@@ -45,4 +57,5 @@ module.exports = {
   onDeletePlant,
   onUpdatePlant,
   onCreatePlant
+  // onGetAll
 }
