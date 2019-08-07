@@ -1,7 +1,6 @@
 
 {{#each plants as |plant|}}
-  {{log plant}}
-  <section data-id="{{plant.id}}">
+  <section data-id="{{plant._id}}">
     <h6>Plant Name:</h6>
     <h3>
       {{plant.name}}
@@ -12,17 +11,28 @@
     </p>
     <h6>Plant Type:</h6>
     <p>
-      {{plant.plant_type}}
+      {{plant.plantType}}
     </p>
-    {{#if plant.editable}}
+    <form class="add-plot">
+      <input type="text" readonly class="form-control-plaintext" name="plot[name]" value="{{plant.name}}">
+      <input type="text" readonly class="form-control-plaintext" name="plot[plantType]" value="{{plant.plantType}}">
+      <button type="submit" class="btn btn-warning">Add to My Plots</button>
+    </form>
+    <form class="add-pot">
+      <input type="text" readonly class="form-control-plaintext" name="pot[name]" value="{{plant.name}}">
+      <input type="text" readonly class="form-control-plaintext" name="pot[plantType]" value="{{plant.plantType}}">
+      <button type="submit" class="btn btn-info">Add to My Pots</button>
+    </form>
+    {{#if (userPlants plant.owner)}}
       <form class="plants-update">
-        <input type="number" readonly class="form-control-plaintext" name="plant[id]" value="{{plant.id}}">
+        <input type="text" readonly class="form-control-plaintext" name="plant[id]" value="{{plant._id}}">
         <input type="text" required name="plant[name]" maxlength="30" placeholder="Plant Name">
         <input type="text" required name="plant[location]" maxlength="4" placeholder="Plot/Pot">
-        <input type="text" required name="plant[plant_type]" maxlength="20" placeholder="Type of Plant">
-        <button type="submit" data-id="{{plant.id}}" class="btn btn-primary">Update</button>
+        <input type="text" required name="plant[plantType]" maxlength="20" placeholder="Type of Plant">
+        <br>
+        <button type="submit" data-id="{{plant._id}}" class="btn btn-primary">Update</button>
       </form>
-      <button data-id="{{plant.id}}" class="btn btn-danger">Remove</button>
+      <button data-id="{{plant._id}}" class="btn btn-danger">Remove</button>
     {{/if}}
     <hr>
   </section>
