@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Plots & Pots</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Plots & Pots</h1>
+    <h4 id="message"></h4>
+  </header>
+  <main>
+    <aside class="controls">
+      <div id="signup-in">
+        <h4>Sign Up</h4>
+        <form id="sign-up">
+          <input type="email" required name="credentials[email]" placeholder="Email" class="span3" />
+          <input type="password" required name="credentials[password]" placeholder="Password" class="span3" />
+          <input type="password" required name="credentials[password_confirmation]" placeholder="Confirm Password" class="span3" />
+          <input type="submit" value="Sign Up" class="btn btn-primary" />
+        </form>
+        <br>
+        <h4>Sign In</h4>
+        <form id="sign-in">
+          <input type="email" required name="credentials[email]" placeholder="Email" />
+          <input type="password" required name="credentials[password]" placeholder="Password" />
+          <input type="submit" value="Sign In" class="btn btn-primary" />
+        </form>
+      </div>
+      <div id="loggedin" class="hidden">
+        <h4>Change Password</h4>
+        <form id="change-pw">
+          <input type="password" required name="passwords[old]" placeholder="Old Password" />
+          <input type="password" required name="passwords[new]" placeholder="New Password" />
+          <input type="submit" value="Change Password" class="btn btn-primary" />
+        </form>
+        <form id="sign-out">
+          <input type="submit" value="Sign Out" class="btn btn-danger" />
+        </form>
+        <br>
+      </div>
+      <div id="plant-controls" class="hidden">
+        <div class="get-all">
+          <button id="plants-index" class="btn btn-primary">See All Plants</button>
+          <br>
+          <button id="plots-index" class="btn btn-warning">See My Plots</button>
+          <br>
+          <button id="pots-index" class="btn btn-info">See My Pots</button>
+          <br>
+          <!-- <button id="all-index" class="btn btn-primary">See Everything</button>
+  <br> -->
+        </div>
+        <br>
+        <hr>
+        <h4>Create A Plant</h4>
+        <form id="plants-create">
+          <input type="text" required name="plant[name]" maxlength="30" placeholder="Plant Name">
+          <input type="text" required name="plant[location]" maxlength="4" placeholder="Plot/Pot">
+          <input type="text" required name="plant[plantType]" maxlength="20" placeholder="Type of Plant">
+          <button type="submit" class="btn btn-primary remove-btn">Create A Plant</button>
+        </form>
+        <br>
+      </div>
+    </aside>
+    <div class="main-content">
+      <div id="all-plants">
+      <h2 class="index-msg"></h2>
+      <section class="results"></section>
+    </div>
+      <div id="your-plots">
+      <h2 class="hidden" id="plots-msg">Your Plots</h2>
+      <section class="plot-results"></section>
+    </div>
+    <div id="your-pots">
+      <h2 class="hidden" id="pots-msg">Your Pots</h2>
+      <section class="pot-results"></section>
+    </div>
+    </div>
+  </main>
+</body>
+
+</html>
