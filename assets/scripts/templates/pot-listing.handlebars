@@ -1,0 +1,22 @@
+
+{{#each pots as |pot|}}
+  <section data-id="{{pot._id}}">
+    <h6>Plant Name:</h6>
+    <h3>
+      {{pot.name}}
+    </h3>
+    <h6>Plant Type:</h6>
+    <p>
+      {{pot.plantType}}
+    </p>
+      <form class="pots-update">
+        <input type="text" readonly class="form-control-plaintext" name="pot[id]" value="{{pot._id}}">
+        <input type="text" required name="pot[name]" maxlength="30" placeholder="Plant Name">
+        <input type="text" required name="pot[plantType]" maxlength="20" placeholder="Type of Plant">
+        <br>
+        <button type="submit" data-id="{{pot._id}}" class="btn btn-primary">Update</button>
+      </form>
+      <button data-id="{{pot._id}}" class="btn btn-danger">Remove</button>
+    <hr>
+  </section>
+{{/each}}
