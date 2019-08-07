@@ -85,6 +85,7 @@ section {
 #all-plants,
 #your-plots,
 #your-pots {
+  flex-grow: 1;
   justify-content: center;
   text-align: center;
 }
